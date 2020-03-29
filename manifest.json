@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "No COVID-19",
+	"version": "1.0",
+	"description": "This extension removes COVID-19 from pages you are on!",
+
+	"browser_action": {
+		"default_icon": "icon.png"
+	},
+
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"*://*/*"
+	],
+
+	"content_scripts": [
+		{
+			"matches":["<all_urls>"],
+			"css": ["infected.css"],
+			"js": ["jquery.min.js","corona.js"],
+			"run_at": "document_end"
+		}
+	] 
+}
